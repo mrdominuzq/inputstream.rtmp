@@ -7,7 +7,7 @@ include(ExternalProject)
 set(configure_command MACHINE=${PLATFORM} <SOURCE_DIR>/config no-shared zlib)
 
 if(CORE_SYSTEM_NAME MATCHES "android")
-  set(configure_command CC=${CMAKE_C_COMPILER} AR=${CMAKE_AR} CFLAGS=${CMAKE_C_FLAGS} <SOURCE_DIR>/Configure shared zlib
+  set(configure_command CC=${CMAKE_C_COMPILER} AR=${CMAKE_AR} <SOURCE_DIR>/Configure shared zlib
                                                --openssldir=${OUTPUT_DIR}
                                                --with-zlib-include=${OUTPUT_DIR}/include
                                                --with-zlib-lib=${OUTPUT_DIR}/lib
