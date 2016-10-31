@@ -32,7 +32,7 @@ endif()
 externalproject_add(openssl
                     SOURCE_DIR ${CMAKE_SOURCE_DIR}
                     UPDATE_COMMAND ""
-                    CONFIGURE_COMMAND ${configure_command}
+                    CONFIGURE_COMMAND AR=${CMAKE_AR} CFLAGS=${CMAKE_C_FLAGS} CC=${CMAKE_C_COMPILER} ${configure_command}
                     BUILD_COMMAND echo Building openssl ${build_command}
                     COMMAND sed -ie "s|apps test||" ${PROJECT_SOURCE_DIR}/Makefile
                     COMMAND make depend
