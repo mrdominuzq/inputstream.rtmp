@@ -35,7 +35,7 @@ externalproject_add(openssl
                     CONFIGURE_COMMAND ${configure_command}
                     BUILD_COMMAND echo Building openssl ${build_command}
                     COMMAND sed -ie "s|apps test||" ${PROJECT_SOURCE_DIR}/Makefile
-                    COMMAND make depend && make
+                    COMMAND make
                     INSTALL_COMMAND ""
                     BUILD_IN_SOURCE 1)
 
